@@ -1,6 +1,14 @@
-const factorialRecursive = (n) => {
-  if (n === 0 || n === 1) {
-    return 1;
+function productExceptSelf(nums) {
+  const result = [];
+  let product = 1;
+  for (let i = 0; i < nums.length; i++) {
+    result[i] = product;
+    product *= nums[i];
   }
-  return n * factorialRecursive(n - 1);
-};
+  product = 1;
+  for (let i = nums.length - 1; i >= 0; i--) {
+    result[i] *= product;
+    product *= nums[i];
+  }
+  return result;
+}
