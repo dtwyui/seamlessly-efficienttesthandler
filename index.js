@@ -1,14 +1,7 @@
-function productExceptSelf(nums) {
-  const result = [];
-  let product = 1;
-  for (let i = 0; i < nums.length; i++) {
-    result[i] = product;
-    product *= nums[i];
-  }
-  product = 1;
-  for (let i = nums.length - 1; i >= 0; i--) {
-    result[i] *= product;
-    product *= nums[i];
+function singleNumber(nums) {
+  let result = 0;
+  for (const num of nums) {
+    result ^= num;
   }
   return result;
 }
